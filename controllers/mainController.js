@@ -4,8 +4,6 @@ const sushi = require("../model/sushi")
 router.get("/", (req, res) =>{
 
     sushi.all(sushi =>{
-
-        console.log(sushi)
         res.render("index", {sushi: sushi})
 
     })
