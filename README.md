@@ -23,7 +23,7 @@ Eat the sushi! Useless app that allows you to create sushi type and then eat the
 * [Questions](#Questions)
 
 ## Demo
-Check out the site here: 
+Check out the site here: https://ancient-wave-10459.herokuapp.com/
 
 ## License
 This project is licensed under: MIT
