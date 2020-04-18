@@ -69,7 +69,7 @@
                         <input type="text" class="form-control" id="newSushi" placeholder="New Type Of Sushi!">
                     </div>
 
-                    <button type="submit" class="btn btn-danger">New Sushi</button>
+                    <button type="submit" class="newSushi btn btn-danger">New Sushi</button>
                     </form>
             </div>
 
@@ -94,10 +94,9 @@
 
 <script>
     $(()=>{
-         $(".eatTheSushi").on("click", function(){
 
+         $(".eatTheSushi").on("click", function () {
             const sushId = $(this).data("id");
-
              $.ajax(`/api/sushi/${sushId}`, {
                 type: "PUT"
             }).then(() => {
@@ -105,6 +104,27 @@
              });
         });
 
+        $(".newSushi").on("click", function(){
+            event.preventDefault()
+
+            const newSushi = {
+                name: $("#newSushi").val().trim()
+            }
+            
+
+            //Check if sushi name has atleat 1 char
+            if(newSushi.name.length < 5 ){
+                return console.log("Sushi name not long enough")
+            } else {
+                $.ajax("/api/sushi", {
+                    type: "POST",
+                    data: newSushi,
+                }).then(() => {
+                    // Reload the page to get the updated list
+                    location.reload()
+                })
+            }
+        })
     })
    
 

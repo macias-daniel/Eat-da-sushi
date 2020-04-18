@@ -13,8 +13,8 @@ router.get("/", (req, res) =>{
 })  
 
 router.post("/api/sushi", (req, res) =>{
-    const sushiName = req.body.sushiName
-    
+    const sushiName = req.body.name
+
     sushi.create(sushiName, data =>{
         res.end()
     })
