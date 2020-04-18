@@ -20,29 +20,41 @@
 
             <div class="col-6 eaten">
 
-                <!-- To Be Repeated -->
-                <div class="row rowSpacing">
 
-                    <div class="col-8 text">
-                        <h4>Hello</h4>
-                    </div>
+                {{#each sushi}}
+                    {{#unless this.hasBeenEaten }}
+                        <!-- To Be Repeated -->
+                        <div class="row rowSpacing">
 
-                    <div class="col-4">
-                        <button type="button" class=" eatTheSushi btn btn-danger"><span>Eat Da Sushi</span></span></button>
-                    </div>
+                            <div class="col-8 text">
+                                <h4>{{ this.name }}</h4>
+                            </div>
 
-                </div>  
+                            <div class="col-4">
+                                <button data-id = {{ this.id }} type="button" class="eatTheSushi btn btn-danger"><span>Eat Da Sushi</span></span></button>
+                            </div>
+
+                        </div>  
+                    {{/unless}}
+                {{/each}}
+
             </div>
             
 
             <div class="col-6 uneaten">
 
-                <!-- To Be Repeated -->
-                <div class="row rowSpacing">   
-                    <div class="col-12 text">
-                        <h4>GoodBye</h4>
+            <!-- To Be Repeated -->
+
+            {{#each sushi}}
+                {{#if this.hasBeenEaten }}
+                    <!-- To Be Repeated -->
+                    <div class="row rowSpacing">   
+                        <div class="col-12 text">
+                            <h4>{{ this.name }}</h4>
+                        </div>
                     </div>
-                </div>
+                {{/if}}
+            {{/each}}
 
             </div>
         </div>
@@ -79,3 +91,21 @@
 
 <!-- Jquery -->
 <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+<script>
+    $(()=>{
+         $(".eatTheSushi").on("click", function(){
+
+            const sushId = $(this).data("id");
+
+             $.ajax(`/api/sushi/${sushId}`, {
+                type: "PUT"
+            }).then(() => {
+                location.reload();
+             });
+        });
+
+    })
+   
+
+</script>

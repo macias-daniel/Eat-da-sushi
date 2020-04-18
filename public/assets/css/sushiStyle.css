@@ -22,7 +22,6 @@ body{
 }
 
 .eatenUneatenRow{
-    height: 50px;
     width: 80%;
     margin: 0 auto;
 }
@@ -34,7 +33,7 @@ body{
 
 .uneaten{
     height: 100%;
-    opacity: 50%;
+    opacity: 40%;
 }
 
 
