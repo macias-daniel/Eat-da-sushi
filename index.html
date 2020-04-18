@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="./public/assets/css/sushiStyle.css">
+    <title>Sushi</title>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="container-fluid">
+
+            <!-- Icon -->
+            <div class="row">
+                <div class="col center">
+                    <img class="sushiImg" src="./public/assets/img/sushi.png" alt="Sushi Smiling">
+                </div>
+            </div>
+
+             <!-- Title -->
+            <div class="row ">
+                <div class="col-12">
+                    <h1 class="title">Eat Da Sushi!</h1>
+                </div>
+            </div>
+
+            <!-- Eaten and Uneaten -->
+            <div class="row eatenUneatenRow">
+
+                <div class="col-6 eaten">
+
+                    <!-- To Be Repeated -->
+                    <div class="row rowSpacing">
+
+                        <div class="col-8 text">
+                            <h4>Hello</h4>
+                        </div>
+
+                        <div class="col-4">
+                            <button type="button" class=" eatTheSushi btn btn-danger"><span>Eat Da Sushi</span></span></button>
+                        </div>
+
+                    </div>  
+                </div>
+                
+
+                <div class="col-6 uneaten">
+
+                    <!-- To Be Repeated -->
+                    <div class="row rowSpacing">   
+                        <div class="col-12 text">
+                            <h4>GoodBye</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Text Box and Submit button -->
+            <div class="row">
+
+                <div class="col-12">
+
+                    <form class="form-width">
+                        <div class="form-group">
+                          <input type="text" class="form-control" id="newSushi" placeholder="New Type Of Sushi!">
+                        </div>
+
+                        <button type="submit" class="btn btn-danger">New Sushi</button>
+                      </form>
+                </div>
+
+            </div>
+
+            <!-- Project Explination -->
+            <div class="row">
+                <div class="col desc">
+                    <p>Input a new type of sushi then eat it!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+</body>
+</html>

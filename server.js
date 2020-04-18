@@ -1,5 +1,6 @@
 const express = require("express")
 const exphbs = require("express-handlebars")
+const path = require("path");
 const indexControllerRoutes = require ("./controllers/mainController")
 
 const app = express()
@@ -11,6 +12,9 @@ app.set("view engine", "handlebars")
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, '/public')));
+
+// Adding listener behavior to server
 app.use(indexControllerRoutes)
 
 app.listen(PORT, ()=>{
